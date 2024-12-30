@@ -1,6 +1,5 @@
 # REST API with SpringBoot
 
-<hr>
 
 Este é um projeto de exemplo de uma API RESTful complteta construída com Spring Boot. A API oferece funcionalidades básicas para gerenciamento de recursos como pessoas, livros e usuários.
 
@@ -25,14 +24,6 @@ A API oferece as seguintes funcionalidades:
 - Endpoints bem documentados com Swagger
 
 ## Configuração do Ambiente de Desenvolvimento
-
-1. Clone este repositório:
-
- git clone https://github.com/rafael-men/rest-with-springboot-and-java.git
-
-<hr>
-
-2. Navegue até o diretório do projeto e execute a aplicação acessando a no link localhost:8080/swagger-ui.html
 
 2.1 Execute a aplicação usando o Docker:
 
