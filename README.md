@@ -8,7 +8,7 @@ Este é um projeto de exemplo de uma API RESTful complteta construída com Sprin
 - Spring Boot
 - Spring Data JPA
 - Spring Web
-- Banco de Dados MySQL (para ambiente de desenvolvimento)
+- Banco de Dados PostgreSQL
 - Maven
 - Hibernate
 - Flyway
