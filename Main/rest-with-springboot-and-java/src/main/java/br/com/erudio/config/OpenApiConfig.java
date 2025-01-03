@@ -12,7 +12,7 @@ public class OpenApiConfig {
 		return GroupedOpenApi.builder()
 				.group("v0.0.1")
 				.packagesToScan("br.com.erudio")
-				.displayName("API REST com SpringBoot e MySQL")
+				.displayName("API REST com SpringBoot e PostgreSQL")
 				.build();
 	}
 }

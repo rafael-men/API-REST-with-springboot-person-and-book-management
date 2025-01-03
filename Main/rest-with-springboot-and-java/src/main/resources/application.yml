@@ -1,36 +1,21 @@
-server:
-  port: 8080
-cors:
-  originPatterns: http://localhost:3000,http://localhost:8080,https://erudio.com.br
-file:
-  upload-dir: /code
-security:
-  jwt:
-    token:
-      secret-key: 53cr37
-      expire-length: 3600000
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rest_api?useTimezone=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
-    username: root
-    password: root123
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rest_api
+    username: postgres
+    password: senha
   jpa:
-    hibernate:
-      ddl-auto: none
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
     show-sql: false
-  servlet:
-    multipart:
-      enabled: true
-      file-size-threshold: 2KB
-      max-file-size: 200MB
-      max-request-size: 215MB
-springdoc:
-  pathsToMatch:
-    - /auth/**
-    - /api/**/v1/**
-  swagger-ui:
-    use-root-path: true
+  jackson:
+    default-property-inclusion: NON_NULL
+
+flyway:
+  url: jdbc:postgresql://localhost:5432/
+  schemas: rest_api
+  user: postgres
+  password: senha

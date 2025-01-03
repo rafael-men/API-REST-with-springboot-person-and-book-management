@@ -1,23 +1,22 @@
 version: "3.9"
 services:
   db:
-    image: mysql:8.0.34
+    image: postgres:15
     restart: always
     environment:
       TZ: America/Sao_Paulo
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: rest_api
-      MYSQL_ROOT_HOST: '%'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: rest_api
     ports:
-      - 3309:3306
+      - 5432:5432
     networks:
       - rafa-network
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      test: [ "CMD", "pg_isready", "-U", "root" ]
       interval: 30s
       retries: 10
       start_period: 60s
-
 
   rest_api:
     build:
@@ -30,17 +29,17 @@ services:
     networks:
       - rafa-network
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/rest_api?useTimezone=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root123
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/rest_api
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: senha
     ports:
       - 8080:8080
     entrypoint:
       - /bin/sh
       - -c
       - |
-        echo "Waiting for MySQL to be ready..."
-        until nc -z db 3306; do
+        echo "Waiting for PostgreSQL to be ready..."
+        until nc -z db 5432; do
           sleep 2
         done
         java -jar /app.jar
