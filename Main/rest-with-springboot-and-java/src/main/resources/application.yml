@@ -1,9 +1,9 @@
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/rest_api
-    username: postgres
-    password: senha
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     properties:
       hibernate:
@@ -15,7 +15,7 @@ spring:
     default-property-inclusion: NON_NULL
 
 flyway:
-  url: jdbc:postgresql://localhost:5432/
-  schemas: rest_api
-  user: postgres
-  password: senha
+  url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/
+  schemas: ${DB_NAME}
+  user: ${DB_USER}
+  password: ${DB_PASSWORD}
