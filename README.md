@@ -23,12 +23,21 @@ A API oferece as seguintes funcionalidades:
 - Autenticação de usuários
 - Endpoints bem documentados com Swagger
 
-## Configuração do Ambiente de Desenvolvimento
+## Passo a Passo para Executar o Projeto com Docker Compose (Back-End)
 
-2.1 Execute a aplicação usando o Docker:
+A seguir, apresentamos um passo a passo detalhado para executar o projeto de **Gerenciamento de Veículos** utilizando **Docker Compose**. Este processo inclui a configuração do ambiente para o **backend** e **banco de dados**, bem como a inicialização do sistema.
 
-- docker compose up -d --build  para criar os contêineres do banco de dados e da aplicação.
+### Pré-requisitos
+Certifique-se de ter as seguintes ferramentas instaladas na sua máquina:
+- **Docker**: Para conteinerização da aplicação.
+- **Docker Compose**: Para orquestração dos contêineres.
 
+### Construção e Execução do Projeto
+Agora, execute os seguintes passos para construir e iniciar os contêineres:
+
+Iniciar o Docker Compose: No diretório raiz do projeto, execute o comando:
+
+docker-compose up --build
 
 
 
