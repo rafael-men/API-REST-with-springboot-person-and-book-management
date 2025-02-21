@@ -1,6 +1,6 @@
 # REST API with Spring Boot
 
-Este é um projeto de exemplo de uma API RESTful completa construída com **Spring Boot**. A API oferece funcionalidades básicas para gerenciamento de recursos como pessoas, livros e usuários.
+Este é um projeto de exemplo de uma API RESTful completa construída com **Spring Boot**. A API oferece funcionalidades básicas para gerenciamento de pessoas, livros e usuários.
 
 ---
 
